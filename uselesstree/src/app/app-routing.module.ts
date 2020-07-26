@@ -11,6 +11,10 @@ const routes: Routes = [
   },
   {
     path: 'home', component: HomeComponent
+  },
+  { 
+    path: "dbs", 
+    loadChildren: () => import("./dbs/dbs.module").then((m) => m.DbsModule) 
   }
 ];
 

@@ -3,20 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { DbsModule } from './dbs/dbs.module';
+
 import { HomeComponent } from './home/home.component';
-import { DbsComponent } from './dbs/dbs.component';
-import { TeaComponent } from './dbs/tea/tea.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DbsComponent,
-    TeaComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DbsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
