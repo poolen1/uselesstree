@@ -15,6 +15,18 @@ const routes: Routes = [
   { 
     path: "dbs", 
     loadChildren: () => import("./dbs/dbs.module").then((m) => m.DbsModule) 
+  },
+  {
+    path: "blog", 
+    loadChildren: () => import("./blog/blog.module").then((m) => m.BlogModule) 
+  },
+  {
+    path: "admin", 
+    loadChildren: () => import("./admin/admin.module").then((m) => m.AdminModule) 
+  },
+  {
+    path: "login",
+    loadChildren: () => import("./login/login.module").then((m) => m.LoginModule) 
   }
 ];
 

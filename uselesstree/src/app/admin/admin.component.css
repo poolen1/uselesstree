@@ -1,13 +1,9 @@
 
 .home-text {
-  padding: 70px 0;
-  text-align: center;
+    padding: 70px 0;
+    text-align: center;
 }
- 
-.login {
-  text-align: right;
-}
-
+  
 a {
   padding: 0px 10px;
   word-wrap: normal;
