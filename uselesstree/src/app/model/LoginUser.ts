@@ -7,6 +7,8 @@ export class LoginUser
     lastName: string;
     emailAddress: string;
     phoneNumber: string;
+    
+    username: string;
     password: string;
 
     applicationRoles: UserRole[];
