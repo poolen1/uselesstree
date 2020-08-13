@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 
+import { RouteGuardService } from './services/route-guard.service';
+
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +24,7 @@ const routes: Routes = [
   },
   {
     path: "admin", 
+    canActivate: [RouteGuardService],
     loadChildren: () => import("./admin/admin.module").then((m) => m.AdminModule) 
   },
   {
