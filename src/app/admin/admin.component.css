@@ -4,6 +4,10 @@
     text-align: center;
 }
   
+.logout {
+  text-align: right;
+}
+
 a {
   padding: 0px 10px;
   word-wrap: normal;

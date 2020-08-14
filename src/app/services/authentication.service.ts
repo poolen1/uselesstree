@@ -17,7 +17,7 @@ export class AuthenticationService {
 
   _isLoggedIn: boolean;
 
-  _currentLoginUser: LoginUser;
+  _currentLoginUser: LoginUser = new LoginUser();
 
   constructor() { }
 
@@ -25,15 +25,36 @@ export class AuthenticationService {
   {
     let loggedIn: boolean = false;
 
-    if (this.isLoggedIn)
+    console.log("username:", username);
+    console.log("pass: ", password);
+
+    this._currentLoginUser.username = username;
+
+    sessionStorage.setItem(LOGIN_KEY, this._currentLoginUser.username);
+    loggedIn = true;
+
+    loggedIn = this.isLoggedIn();
+
+    /*
+    if (loggedIn)
     {
       loggedIn = true;
+      return loggedIn;
     }
-    else if (username == 'admin' && password == 'Abc$1234')
+    else if (this._currentLoginUser.username == 'admin' && password == 'asdf')
     {
-      sessionStorage.setItem(LOGIN_KEY, username);
+      console.log("logging in");
+      sessionStorage.setItem(LOGIN_KEY, this._currentLoginUser.username);
       loggedIn = true;
     }
+    */
+
+   if (this._currentLoginUser.username == 'admin' && password == 'asdf')
+   {
+     console.log("logging in");
+     sessionStorage.setItem(LOGIN_KEY, this._currentLoginUser.username);
+     loggedIn = true;
+   }
 
     return loggedIn;
   }
@@ -41,16 +62,18 @@ export class AuthenticationService {
   public isLoggedIn(): boolean
   {
     let isLoggedIn: boolean;
-    let username: string;
-    let password: string;
 
     isLoggedIn = false;
-    username = sessionStorage.getItem(LOGIN_KEY);
+    this._currentLoginUser.username = sessionStorage.getItem(LOGIN_KEY);
 
-    if (username != null)
+    console.log("username: ", this._currentLoginUser.username);
+
+    if (this._currentLoginUser.username != null)
     {
       isLoggedIn = true;
     }
+
+    console.log("isLoggedIn: ", isLoggedIn);
 
     return isLoggedIn;
   }

@@ -7,9 +7,9 @@ import { AuthenticationService } from './authentication.service';
 })
 export class RouteGuardService implements CanActivate
 {
-  constructor(private _router: Router, private _authSvc: AuthenticationService) 
-  {    
-  }
+  constructor(private _router: Router, 
+              private _authSvc: AuthenticationService) 
+  {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean
   {

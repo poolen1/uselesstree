@@ -1,7 +1,7 @@
 
 <div class="dashboard">
     <nav class="login">
-        <a routerLink="/login"> Log In </a>
+        <!-- <a routerLink="/login"> Log In </a> -->
     </nav>
 </div>
 
@@ -13,5 +13,6 @@
     <nav>
         <a routerLink="/home"> Home </a>
         <a routerLink="/blog"> Blog </a>
+        <a *ngif="isLoggedIn()" routerLink="/admin"> Admin </a>
     </nav>
 </div>

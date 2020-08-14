@@ -3,6 +3,12 @@
     <a routerLink="/home"> Home </a>
 </nav>
 
+<div class="dashboard">
+    <nav class="logout">
+        <a routerLink="/home" (click)="logout()"> Log Out </a>
+    </nav>
+</div>
+
 <div class="home-text">
     <h1> Admin </h1>
     <a routerLink='./blog'> <h2> Blog </h2> </a>
